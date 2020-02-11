@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{16a0f6e9-512e-de0b-bade-0af8bebf4684}</ProjectGuid>
+    <ProjectGuid>{033b72cc-b76b-aea1-41e4-7cfdc8ee25ec}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CursorManager.cs" />
      <Compile Include="Assets\Scripts\InputUIManager.cs" />
      <Compile Include="Assets\Scripts\ModelViewControls.cs" />
+     <Compile Include="Assets\Scripts\ScreenCapture.cs" />
      <Compile Include="Assets\Scripts\TexturePaint.cs" />
      <None Include="Assets\Shaders\ColorPicker.shader" />
      <None Include="Assets\Shaders\TexturePaint.shader" />
@@ -581,95 +582,95 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{29ea7d8a-f108-1263-42f5-f27dac50408a}</Project>
+      <Project>{ce46da9d-89bf-a070-9612-f61f6d9630ec}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.multiplayer-hlapi.Editor.csproj">
-      <Project>{8d300b59-462b-c04d-77e6-6e300546a410}</Project>
+      <Project>{77deaf60-f12b-69d5-1c70-1c7a5aea5036}</Project>
       <Name>com.unity.multiplayer-hlapi.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{37f1b647-f79f-13de-b180-640c50eee1a2}</Project>
+      <Project>{58e9fa73-9986-e4b5-102e-76e73363b831}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{232f18c9-05b1-0e82-0aed-4e38bc347d5a}</Project>
+      <Project>{f1adc8f9-05f3-3d31-11bd-b60e1953fd1b}</Project>
       <Name>Unity.RenderPipelines.Core.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{60a74228-5cab-20ed-50a9-fc10a23e0be2}</Project>
+      <Project>{1acf2860-18a6-e417-d64b-fec6e0936f6e}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{3bd732dd-18f2-34aa-016e-515f81574ea2}</Project>
+      <Project>{aee26002-f444-5375-0642-5cecc2558493}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{2f15fcd1-485d-e9a5-750a-a264ee52e81c}</Project>
+      <Project>{c00ab94a-bd1e-dfdc-5dd4-ecad5df337f6}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{3beed650-81cc-99ac-586a-0ccc66d347b2}</Project>
+      <Project>{7a4121e7-7f92-5271-a312-89be9861d9db}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{5bf183e5-5428-3428-5241-c32c0682361b}</Project>
+      <Project>{a8e0476a-fef5-e548-d0c9-8f4bef2cc256}</Project>
       <Name>Unity.CollabProxy.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.multiplayer-weaver.Editor.csproj">
-      <Project>{909922c9-798f-0401-159a-4a1b6eb99f3b}</Project>
+      <Project>{a4717b3e-162b-7c92-ecdd-977831b12249}</Project>
       <Name>com.unity.multiplayer-weaver.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
-      <Project>{19d75a67-d6e1-b7ef-fb83-e985acbdffba}</Project>
+      <Project>{e70af86d-47af-4028-d71e-56724f40b6fd}</Project>
       <Name>UnityEngine.XR.LegacyInputHelpers</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{f093a691-da58-cebe-b50e-1f71b0ea4dea}</Project>
+      <Project>{b4e6e7d7-1574-abca-c320-3990a2e8c423}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{5ffde26f-15bd-8d49-b161-4cf719884d4a}</Project>
+      <Project>{b39c3ffb-cc51-c1cb-4bd3-89878b4527e4}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{bade730f-dcc8-ea31-e6dc-d07687c33c2a}</Project>
+      <Project>{6be0d3af-b97c-4821-fb77-1d9233c79f9c}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
-      <Project>{8848c80a-0b99-ad29-f163-1d3524e943ad}</Project>
+      <Project>{6ca30141-3c00-b758-a272-55734a9f2b53}</Project>
       <Name>Unity.2D.Tilemap.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
-      <Project>{a8c9e423-b7fe-5160-32ca-ea6c5f233d38}</Project>
+      <Project>{4028fbaf-9c5d-b8dc-4589-18a292743d74}</Project>
       <Name>UnityEditor.SpatialTracking</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
-      <Project>{7d2d4420-467d-e4a4-c3be-9c0a608d6054}</Project>
+      <Project>{66531fe9-6af3-fb6b-1004-3c31d7d25adf}</Project>
       <Name>UnityEngine.SpatialTracking</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
-      <Project>{d2a1b3c8-eb1b-8dd7-5926-2440a775027e}</Project>
+      <Project>{a2640d2b-ce12-4e5a-e702-7f0a700d2929}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
-      <Project>{34434e2a-b067-a42c-d92e-09a3d54eca62}</Project>
+      <Project>{31c1963f-b46f-386b-92f8-64193d76d0e1}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{88db1eac-00df-1561-c38a-3c9667919c90}</Project>
+      <Project>{0f260c79-1a57-9de0-ed3e-5d88ee0dfa71}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
-      <Project>{6afb4e5e-520c-9427-a0f0-02969a485531}</Project>
+      <Project>{801fe553-3a56-7506-85dd-23a902bcae07}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{cec67d3b-5a6f-48e7-2c6c-8c1195bdd1c1}</Project>
+      <Project>{6fc645ee-e2c6-44e7-5cee-05b50ba58fc1}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.multiplayer-hlapi.Runtime.csproj">
-      <Project>{72925ea7-127d-c859-d7e8-1d9e5e3dbe6e}</Project>
+      <Project>{80d607ca-bf6a-78a9-edb4-66982ab08555}</Project>
       <Name>com.unity.multiplayer-hlapi.Runtime</Name>
     </ProjectReference>
   </ItemGroup>

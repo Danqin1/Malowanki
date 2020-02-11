@@ -23,9 +23,17 @@ public class BrushManager : MonoBehaviour
             break;
             case "green" : Shader.SetGlobalColor("_BrushColor",Color.green);
             break;
-            case "rubber" : Shader.SetGlobalColor("_BrushColor",Color.white);
+            case "rubber" : Shader.SetGlobalColor("_BrushColor",Color.white);// rubber as white color
             break;
             case "black" : Shader.SetGlobalColor("_BrushColor",Color.black);
+            break;
+            case "cyan" : Shader.SetGlobalColor("_BrushColor",Color.cyan);
+            break;
+            case "magenta" : Shader.SetGlobalColor("_BrushColor",Color.magenta);
+            break;
+            case "gray" : Shader.SetGlobalColor("_BrushColor",Color.gray);
+            break;
+            case "yellow" : Shader.SetGlobalColor("_BrushColor",Color.yellow);
             break;
         }
     }
