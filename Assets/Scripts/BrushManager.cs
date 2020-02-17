@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BrushManager : MonoBehaviour
 {    
@@ -9,7 +7,7 @@ public class BrushManager : MonoBehaviour
         //initializing values
         Shader.SetGlobalColor("_BrushColor",Color.black);
         Shader.SetGlobalFloat("_BrushOpacity",1);//
-        Shader.SetGlobalFloat("_BrushSize", 0.1f);
+        Shader.SetGlobalFloat("_BrushSize", 0.3f);
         Shader.SetGlobalFloat("_BrushHardness", 1);
     }
 

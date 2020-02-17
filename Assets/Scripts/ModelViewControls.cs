@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//class used for 3d coloring
 public class ModelViewControls : MonoBehaviour {
 	private int yMinLimit = 0, yMaxLimit = 80;
 	private Quaternion currentRotation, desiredRotation, rotation;

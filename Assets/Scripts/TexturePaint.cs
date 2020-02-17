@@ -1,17 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 
 public class TexturePaint : MonoBehaviour {
 
     // ======================================================================================================================
     // PARAMETERS -----------------------------------------------------------------------------------------------
-    public  Texture          baseTexture;                  // used to deterimne the dimensions of the runtime texture
+    private  Texture          baseTexture;                  // used to deterimne the dimensions of the runtime texture
     public  Material         meshMaterial;                 // used to bind the runtime texture as the albedo of the mesh
-    public  GameObject       meshGameobject;
+    private  GameObject       meshGameobject;
+    private Mesh meshToDraw;
+
     public  Shader           UVShader;                     // the shader usedto draw in the texture of the mesh
-    public  Mesh             meshToDraw;
     public  Shader           ilsandMarkerShader;
     public  Shader           fixIlsandEdgesShader;
     public  Shader           combineMetalicSmoothnes;                         
@@ -36,6 +35,10 @@ public class TexturePaint : MonoBehaviour {
     // INITIALIZE -------------------------------------------------------------------
 
     void Start () {
+        //finding object paintable in scene
+        meshGameobject = GameObject.FindWithTag("PaintObject");
+        meshToDraw = meshGameobject.GetComponent<MeshFilter>().mesh;
+        baseTexture = new Texture2D(1920,1080);
 
         // Main cam initialization ---------------------------------------------------
                            mainC = Camera.main;
@@ -101,25 +104,21 @@ public class TexturePaint : MonoBehaviour {
         metalic   .UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
         smoothness.UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
         // ---------------------------------------------------------------------------
-        // Setting up Mouse Parameters
-
-        RaycastHit hit;
-        Ray        ray = mainC.ScreenPointToRay(Input.mousePosition);
-        Vector4    mwp = Vector3.positiveInfinity;
-
-        if (Physics.Raycast(ray, out hit))
+        // Setting up Input Parameters
+        if(Input.GetMouseButtonDown(0))
         {
-            if (hit.collider.gameObject.tag == "PaintObject") 
-            mwp = hit.point;
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray , out hit))
+            {
+                Debug.DrawRay(ray.origin, hit.point,Color.red);
+                if(hit.collider.gameObject.tag == "PaintObject")
+                {
+                    Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
+                }
+            }
+            print(ray.direction);
         }
-
-        mwp.w = Input.GetMouseButton(0)? 1 : 0;
-
-        mouseWorldPosition = mwp;
-        Shader.SetGlobalVector("_Mouse", mwp);
-
-
-        
     }
 
     // ======================================================================================================================
