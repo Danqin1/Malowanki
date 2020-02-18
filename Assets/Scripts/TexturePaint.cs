@@ -19,11 +19,9 @@ public class TexturePaint : MonoBehaviour {
     // --------------------------------
   
     private Camera           mainC;
-    private int              clearTexture;
     private RenderTexture    markedIlsandes;
     private CommandBuffer    cb_markingIlsdands;
     private int              numberOfFrames;
-    private Material         fixEdgesMaterial;
     private Material         createMetalicGlossMap;
     private RenderTexture    metalicGlossMapCombined;
 
@@ -31,6 +29,9 @@ public class TexturePaint : MonoBehaviour {
     private PaintableTexture albedo;
     private PaintableTexture metalic;
     public  PaintableTexture smoothness;
+
+    RaycastHit hit;
+    Ray ray;
     // ======================================================================================================================
     // INITIALIZE -------------------------------------------------------------------
 
@@ -74,10 +75,12 @@ public class TexturePaint : MonoBehaviour {
 
         // Command buffer inialzation ------------------------------------------------
 
-        cb_markingIlsdands      = new CommandBuffer();
-        cb_markingIlsdands.name = "markingIlsnads";
+        cb_markingIlsdands = new CommandBuffer
+        {
+            name = "markingIlsnads"
+        };
 
-      
+
         cb_markingIlsdands.SetRenderTarget(markedIlsandes);
         Material mIlsandMarker  = new Material(ilsandMarkerShader);
         cb_markingIlsdands.DrawMesh(meshToDraw, Matrix4x4.identity, mIlsandMarker);
@@ -105,20 +108,19 @@ public class TexturePaint : MonoBehaviour {
         smoothness.UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
         // ---------------------------------------------------------------------------
         // Setting up Input Parameters
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray , out hit))
             {
-                Debug.DrawRay(ray.origin, hit.point,Color.red);
-                if(hit.collider.gameObject.tag == "PaintObject")
+                Debug.DrawRay(ray.origin, ray.direction*20,Color.red,2);
+                if(hit.collider.gameObject.CompareTag("PaintObject"))
                 {
                     Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
                 }
             }
-            print(ray.direction);
         }
+        print(Shader.GetGlobalFloat("_help"));
     }
 
     // ======================================================================================================================
@@ -198,8 +200,10 @@ public class PaintableTexture
 
         // ----------------------------------------------
 
-        cb      = new CommandBuffer();
-        cb.name = "TexturePainting"+ id;
+        cb = new CommandBuffer
+        {
+            name = "TexturePainting" + id
+        };
 
 
         cb.SetRenderTarget(runTimeTexture);
