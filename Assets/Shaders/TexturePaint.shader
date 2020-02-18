@@ -53,7 +53,7 @@
 			}			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float4 col  = tex2Dlod(_MainTex, float4(i.uv,0,0));
+				float4 col  = tex2D(_MainTex, i.uv);
 				float  size = _BrushSize;
 				float  soft = _BrushHardness;
 				float  f	= distance(_Mouse.xyz, i.worldPos);

@@ -23,9 +23,10 @@ public class TexturePaint : MonoBehaviour {
     private int              numberOfFrames;
     // ---------------------------------
     private PaintableTexture albedo;
-
+    public GameObject flare;
     RaycastHit hit;
     Ray ray;
+
     // ======================================================================================================================
     // INITIALIZE -------------------------------------------------------------------
 
@@ -33,11 +34,11 @@ public class TexturePaint : MonoBehaviour {
         //finding object paintable in scene
         meshGameobject = GameObject.FindWithTag("PaintObject");
         meshToDraw = meshGameobject.GetComponent<MeshFilter>().mesh;
-        baseTexture = new Texture2D(1920,1080);
+        baseTexture = new Texture2D(1920,1080,TextureFormat.ARGB32,false);
         // Main cam initialization ---------------------------------------------------
                            mainC = Camera.main;
-        if (mainC == null) mainC = this.GetComponent<Camera>();
-        if (mainC == null) mainC = GameObject.FindObjectOfType<Camera>();
+        if (mainC == null) mainC = GetComponent<Camera>();
+        if (mainC == null) mainC = FindObjectOfType<Camera>();
         // Texture and Mat initalization ---------------------------------------------
         markedIlsandes = new RenderTexture(baseTexture.width, baseTexture.height, 0, RenderTextureFormat.R8);
         albedo         = new PaintableTexture(Color.white, baseTexture.width, baseTexture.height, "_MainTex"
@@ -59,37 +60,54 @@ public class TexturePaint : MonoBehaviour {
     private void Update()
     {
         if (numberOfFrames > 2) mainC.RemoveCommandBuffer(CameraEvent.AfterDepthTexture, cb_markingIlsdands);
-        numberOfFrames++; 
-        albedo    .UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
-        // input for PC and WEB
-       /* if(Input.GetMouseButton(0))
+        numberOfFrames++;
+        albedo.UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
+        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray , out hit))
+            if (Input.GetMouseButton(0))
             {
-                Debug.DrawRay(ray.origin, ray.direction*20,Color.red,2);
-                if(hit.collider.gameObject.CompareTag("PaintObject"))
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
+                    if (hit.collider.gameObject.CompareTag("PaintObject"))
+                    {
+                        Instantiate(flare, hit.point, Quaternion.identity);
+                        Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
+                    }
                 }
             }
-        }*/
-        if(Input.touchCount > 0)
-        {
-            for(var i = 0;i<Input.touchCount;i++)
+            else
             {
+                ResetMousePos();
+            }
+        }
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.touchCount > 0)
+            {
+                for (var i = 0; i < Input.touchCount; i++)
+                {
                     ray = mainC.ScreenPointToRay(Input.GetTouch(0).position);
                     if (Physics.Raycast(ray, out hit))
                     {
                         if (hit.collider.gameObject.CompareTag("PaintObject"))
                         {
+                            Instantiate(flare, hit.point, Quaternion.identity);
                             Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
-                            Debug.DrawRay(ray.origin, ray.direction * 20, Color.red, 2);
                         }
                     }
-                
-            }
 
+                }
+
+            }
+            else
+            {
+                ResetMousePos();
+            }
         }
+    }
+    private void ResetMousePos()
+    {
+        Shader.SetGlobalVector("_Mouse", new Vector4(0, 0, 0, 0));
     }
 }
