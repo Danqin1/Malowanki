@@ -2,7 +2,6 @@
 using UnityEditor;
 using UnityEngine.Rendering;
 
-[System.Serializable]
 public class PaintableTexture
 {
     public string id;
@@ -20,7 +19,7 @@ public class PaintableTexture
     {
         this.id = id;
 
-        runTimeTexture = new RenderTexture(width, height, 0)
+        runTimeTexture = new RenderTexture(width, height,0)
         {
             anisoLevel = 0,
             useMipMap = false,

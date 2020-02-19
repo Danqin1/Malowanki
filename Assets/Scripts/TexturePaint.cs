@@ -33,7 +33,9 @@ public class TexturePaint : MonoBehaviour {
     void Start () {
         //finding object paintable in scene
         meshGameobject = GameObject.FindWithTag("PaintObject");
+        if (!meshGameobject) print("Brak painObject");
         meshToDraw = meshGameobject.GetComponent<MeshFilter>().mesh;
+        if (!meshToDraw) print("Brak mesh painObject");
         baseTexture = new Texture2D(1920,1080,TextureFormat.ARGB32,false);
         // Main cam initialization ---------------------------------------------------
                            mainC = Camera.main;
