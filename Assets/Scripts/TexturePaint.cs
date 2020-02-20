@@ -45,9 +45,9 @@ public class TexturePaint : MonoBehaviour {
         markedIlsandes = new RenderTexture(baseTexture.width, baseTexture.height, 0, RenderTextureFormat.R8);
         albedo         = new PaintableTexture(Color.white, baseTexture.width, baseTexture.height, "_MainTex"
             ,UVShader, meshToDraw, fixIlsandEdgesShader,markedIlsandes);
-
+        //meshMaterial.SetTexture("_MainTex", albedo.runTimeTexture);
         meshMaterial.SetTexture(albedo.id, albedo.runTimeTexture);
-        meshMaterial.EnableKeyword("_METALLICGLOSSMAP");
+        //meshMaterial.EnableKeyword("_METALLICGLOSSMAP");
         // Command buffer inialzation ------------------------------------------------
         cb_markingIlsdands = new CommandBuffer
         {
@@ -107,6 +107,7 @@ public class TexturePaint : MonoBehaviour {
                 ResetMousePos();
             }
         }
+       // print(Shader.GetGlobalVector("_Mouse")+"Color: "+Shader.GetGlobalColor("_BrushColor"));
     }
     private void ResetMousePos()
     {

@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4538f4e35f68ae44da77934a78df5160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshMaterial: {fileID: 2100000, guid: 4c096c782c67fa74bb83681438b58556, type: 2}
-  UVShader: {fileID: 4800000, guid: d39c13fa40470d84eaae92a154ecf1f0, type: 3}
-  ilsandMarkerShader: {fileID: 4800000, guid: d39c13fa40470d84eaae92a154ecf1f0, type: 3}
+  meshMaterial: {fileID: 2100000, guid: 24111e586583a1d4f91c2300d4881ffa, type: 2}
+  UVShader: {fileID: 4800000, guid: 59c35d77191d5254ab8d0f81027b4ebe, type: 3}
+  ilsandMarkerShader: {fileID: 4800000, guid: 59c35d77191d5254ab8d0f81027b4ebe, type: 3}
   fixIlsandEdgesShader: {fileID: 4800000, guid: 74ee5375b10b65e4eb4c870ac758eafd,
     type: 3}
   flare: {fileID: 1098245772625174, guid: d350ad29b27c64ecbad769fd1feff30a, type: 3}
@@ -789,7 +789,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c096c782c67fa74bb83681438b58556, type: 2}
+      objectReference: {fileID: 2100000, guid: 24111e586583a1d4f91c2300d4881ffa, type: 2}
     - target: {fileID: 5203828538051717394, guid: b0628fe0b1da2dd41b8a192a529434ba,
         type: 3}
       propertyPath: m_Mesh

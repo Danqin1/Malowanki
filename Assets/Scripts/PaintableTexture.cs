@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine.Rendering;
 
+[System.Serializable]
 public class PaintableTexture
 {
     public string id;
