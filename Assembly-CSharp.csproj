@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CC723B03-6BB7-A1AE-41E4-7CFDC8EE25EC}</ProjectGuid>
+    <ProjectGuid>{06766C7D-D49F-30BA-3273-78AEBDC378B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,99 +65,36 @@
   <ItemGroup>
     <Compile Include="Assets\FullTiltBoogie\RotateFlareHolder.cs" />
     <Compile Include="Assets\Scripts\BrushManager.cs" />
-    <Compile Include="Assets\Scripts\ColoringUI.cs" />
+    <Compile Include="Assets\Scripts\FreePaintingUI.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\ModelViewControls.cs" />
-    <Compile Include="Assets\Scripts\PaintableTexture.cs" />
-    <Compile Include="Assets\Scripts\ScreenCapture.cs" />
-    <Compile Include="Assets\Scripts\TexturePaint.cs" />
-    <None Include="Assets\Shaders\TexturePaint.shader" />
-    <None Include="Assets\Shaders\FixIlsandEdges.shader" />
-    <None Include="Assets\Shaders\MarkIlsands.shader" />
+    <Compile Include="Assets\Scripts\Painter.cs" />
     <None Include="Assets\FullTiltBoogie\Helpers\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Jobs">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Jobs.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Properties">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Piotr/Documents/Unity Projects/ColoLearn/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -329,12 +266,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/PackageCache/com.unity.burst@1.1.2/Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>C:/Users/Piotr/Documents/Unity Projects/Malowanki/Library/PackageCache/com.unity.collections@0.1.1-preview/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

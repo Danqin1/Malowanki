@@ -7,8 +7,8 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: bf0536e808bb5a94abb5e9469b5daa43
+    guid: 4d2160f9384a6eb4eab75a561a78a56b
   - enabled: 1
-    path: Assets/Scenes/Coloring.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/FreePainting.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
