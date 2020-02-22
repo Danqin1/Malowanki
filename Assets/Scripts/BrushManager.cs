@@ -6,8 +6,8 @@ public class BrushManager : MonoBehaviour
     void Start()
     {
         //initializing values
-        painter.BrushColor = Color.black;
-        painter.BrushSize = 1;
+        painter.BrushColor = Color.red;
+        painter.BrushSize = 1f;
     }
 
     public void SetColor(string color)
