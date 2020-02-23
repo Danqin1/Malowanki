@@ -1,50 +1,42 @@
 ﻿using UnityEngine;
 
 public class BrushManager : MonoBehaviour
-{
-    public Painter painter;
+{    
     void Start()
     {
         //initializing values
-        painter.BrushColor = Color.red;
-        painter.BrushSize = 1f;
+        Shader.SetGlobalColor("_BrushColor",Color.black);
+        Shader.SetGlobalFloat("_BrushOpacity",1);//
+        Shader.SetGlobalFloat("_BrushSize", 0.3f);
+        Shader.SetGlobalFloat("_BrushHardness", 1);
     }
 
     public void SetColor(string color)
     {
         switch(color)
         {
-            case "red" :
-                painter.BrushColor = Color.red;
+            case "red" : Shader.SetGlobalColor("_BrushColor",Color.red);
             break;
-            case "blue" :
-                painter.BrushColor = Color.blue;
+            case "blue" : Shader.SetGlobalColor("_BrushColor",Color.blue);
             break;
-            case "green" :
-                painter.BrushColor = Color.green;
+            case "green" : Shader.SetGlobalColor("_BrushColor",Color.green);
             break;
-            case "rubber" :
-                painter.BrushColor = Color.white;// rubber as white color
+            case "rubber" : Shader.SetGlobalColor("_BrushColor",Color.white);// rubber as white color
             break;
-            case "black" :
-                painter.BrushColor = Color.black;
+            case "black" : Shader.SetGlobalColor("_BrushColor",Color.black);
             break;
-            case "cyan" :
-                painter.BrushColor = Color.cyan;
+            case "cyan" : Shader.SetGlobalColor("_BrushColor",Color.cyan);
             break;
-            case "magenta" :
-                painter.BrushColor = Color.magenta;
+            case "magenta" : Shader.SetGlobalColor("_BrushColor",Color.magenta);
             break;
-            case "gray" :
-                painter.BrushColor = Color.gray;
+            case "gray" : Shader.SetGlobalColor("_BrushColor",Color.gray);
             break;
-            case "yellow" :
-                painter.BrushColor = Color.yellow;
+            case "yellow" : Shader.SetGlobalColor("_BrushColor",Color.yellow);
             break;
         }
     }
     public void SetBrushSize(float size)
     {
-        painter.BrushSize = size;
+        Shader.SetGlobalFloat("_BrushSize", size);
     }
 }
