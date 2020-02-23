@@ -7,4 +7,8 @@ public class ColoringUI : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void ScreenShot()
+    {
+        ScreenCapture.TakeScreenshot_Static(Camera.main.pixelWidth, Camera.main.pixelHeight);
+    }
 }

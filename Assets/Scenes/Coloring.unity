@@ -279,6 +279,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462670804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 829789783876398038, guid: 22efcce9b9e447442b121bee554b0a1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766997333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f0a85984aee6b46b52d7898b312aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &571009714
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc09a81b21adfb4d819d1e49bccfbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resWidth: 1920
-  resHeight: 1080
 --- !u!114 &571009717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +340,13 @@ MonoBehaviour:
   ilsandMarkerShader: {fileID: 4800000, guid: 4a3366ea94671be4e86ed1233eae3534, type: 3}
   fixIlsandEdgesShader: {fileID: 4800000, guid: 74ee5375b10b65e4eb4c870ac758eafd,
     type: 3}
+  albedo:
+    id: 
+    runTimeTexture: {fileID: 0}
+    paintedTexture: {fileID: 0}
+    mPaintInUV: {fileID: 0}
+    mFixedEdges: {fileID: 0}
+    fixedIlsands: {fileID: 0}
   flare: {fileID: 1098245772625174, guid: d350ad29b27c64ecbad769fd1feff30a, type: 3}
   flareBox: {fileID: 1053549881}
 --- !u!81 &571009718
@@ -637,6 +654,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 356788024966471457, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -158.55002
+      objectReference: {fileID: 0}
+    - target: {fileID: 356788024966471457, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 356788024966471457, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 317.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 356788024966471457, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 51.412
+      objectReference: {fileID: 0}
     - target: {fileID: 356788025394229508, guid: 22efcce9b9e447442b121bee554b0a1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,7 +803,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 571009715}
+      objectReference: {fileID: 462670804}
+    - target: {fileID: 356788026109921065, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ScreenShot
+      objectReference: {fileID: 0}
     - target: {fileID: 356788026590218472, guid: 22efcce9b9e447442b121bee554b0a1c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -776,6 +818,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356788027042305046, guid: 22efcce9b9e447442b121bee554b0a1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.0000153
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22efcce9b9e447442b121bee554b0a1c, type: 3}

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using UnityEngine.Rendering;
 
 [System.Serializable]
@@ -11,16 +10,16 @@ public class PaintableTexture
 
     public CommandBuffer cb;
 
-    private Material mPaintInUV;
-    private Material mFixedEdges;
-    private RenderTexture fixedIlsands;
+    public Material mPaintInUV;
+    public Material mFixedEdges;
+    public RenderTexture fixedIlsands;
 
     public PaintableTexture(Color clearColor, int width, int height, string id,
         Shader sPaintInUV, Mesh mToDraw, Shader fixIlsandEdgesShader, RenderTexture markedIlsandes)
     {
         this.id = id;
 
-        runTimeTexture = new RenderTexture(width, height,0)
+        runTimeTexture = new RenderTexture(width, height, 0)
         {
             anisoLevel = 0,
             useMipMap = false,
@@ -33,8 +32,6 @@ public class PaintableTexture
             useMipMap = false,
             filterMode = FilterMode.Bilinear
         };
-
-
         fixedIlsands = new RenderTexture(paintedTexture.descriptor);
 
         Graphics.SetRenderTarget(runTimeTexture);

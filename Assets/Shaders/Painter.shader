@@ -1,18 +1,18 @@
-﻿Shader "Unlit/NewUnlitShader"
+﻿Shader "Unlit/Painter"
 {
     SubShader
     {
-        Tags { "RenderType"="Opaque" "RenderPipeline" = "UniversalPipeline"}
+        Tags { "RenderType"="Opaque"}
         LOD 100
 
         Pass
         {
             CGPROGRAM
+            //#pragma target 4.0
+            
             #pragma vertex vert
             #pragma fragment frag
-            #pragma target 3.0
-            // make fog work
-            #pragma multi_compile_fog
+
 
             #include "UnityCG.cginc"
 
@@ -24,28 +24,26 @@
 
             struct v2f
             {
-                float3 worldPos : TEXCOORD0;
-                float2 uv : TEXCOORD1;
-                UNITY_FOG_COORDS(1)
+                float3 worldPos : TEXCOORD1;
+                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            uniform float4    _Mouse;
-            float4x4  mesh_Object2World;
-            float4	  _BrushColor;
-            float	  _BrushOpacity;
-            float	  _BrushHardness;
-            float	  _BrushSize;
-
+            sampler2D           _MainTex;
+            float4              _MainTex_ST;
+            uniform float4      _Mouse;
+            float4x4            mesh_Object2World;
+            float4	            _BrushColor;
+            float	            _BrushOpacity;
+            float	            _BrushHardness;
+            float	            _BrushSize;
+            float3              _help;
             v2f vert (appdata v)
             {
                 v2f o;
-               // o.vertex = UnityObjectToClipPos(v.vertex);
-               // o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                //UNITY_TRANSFER_FOG(o,o.vertex);
-               // return o;
+               o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+
                 float2 uvRemapped = v.uv.xy;
                 uvRemapped.y = 1. - uvRemapped.y;
                 uvRemapped = uvRemapped * 2. - 1.;
@@ -53,7 +51,7 @@
                 o.vertex = float4(uvRemapped.xy, 0., 1.);
                 o.worldPos = mul(mesh_Object2World, v.vertex);
                 o.uv = v.uv;
-
+               
                 return o;
             }
 

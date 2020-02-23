@@ -3,9 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void Play()
+    public GameObject MainMenuCanvas;
+    public GameObject PlayModesCanvas;
+    public void PlayButton()
+    {
+        MainMenuCanvas.SetActive(false);
+        PlayModesCanvas.SetActive(true);
+    }
+    public void PlayFreePaint()
     {
         SceneManager.LoadScene("Coloring");
+    }
+    public void PlayAdding()
+    {
+        SceneManager.LoadScene("Adding");
+    }
+    public void BackToMainMenu()
+    {
+        MainMenuCanvas.SetActive(true);
+        PlayModesCanvas.SetActive(false);
     }
     public void Quit()
     {
