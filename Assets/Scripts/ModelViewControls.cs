@@ -3,14 +3,18 @@ using System.Collections;
 
 //class used for 3d coloring
 public class ModelViewControls : MonoBehaviour {
-	private int yMinLimit = 0, yMaxLimit = 80;
+	private readonly int yMinLimit = 0;
+	private readonly int yMaxLimit = 80;
 	private Quaternion currentRotation, desiredRotation, rotation;
 	private float yDeg=15, xDeg=0.0f;
-	private float currentDistance,desiredDistance=2.0f,maxDistance = 6.0f,minDistance = 9.0f;
+	private float currentDistance;
+	private float desiredDistance = 2.0f;
+	private readonly float maxDistance = 6.0f;
+	private readonly float minDistance = 9.0f;
 	private Vector3 position;
 	public GameObject targetObject,camObject;
 	public bool Is2D = false;
-	float sensitivity=1.25f;
+	readonly float sensitivity=1.25f;
 	void Start () {
 		currentDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
 	}
