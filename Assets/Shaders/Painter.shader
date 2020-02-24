@@ -37,7 +37,6 @@
             float	            _BrushOpacity;
             float	            _BrushHardness;
             float	            _BrushSize;
-            float3              _help;
             v2f vert (appdata v)
             {
                 v2f o;
