@@ -50,18 +50,18 @@ public class PaintableTexture
 
         // ----------------------------------------------
 
-        cb = new CommandBuffer
-        {
-            name = "TexturePainting" + id
-        };
+        //cb = new CommandBuffer
+        //{
+        //    name = "TexturePainting" + id
+        //};
 
 
-        cb.SetRenderTarget(runTimeTexture);
-        cb.DrawMesh(mToDraw, Matrix4x4.identity, mPaintInUV);
+        Graphics.SetRenderTarget(runTimeTexture);
+        //Graphics.DrawMesh(mToDraw, Matrix4x4.identity, mPaintInUV);
 
-        cb.Blit(runTimeTexture, fixedIlsands, mFixedEdges);
-        cb.Blit(fixedIlsands, runTimeTexture);
-        cb.Blit(runTimeTexture, paintedTexture);
+        Graphics.Blit(runTimeTexture, fixedIlsands, mFixedEdges);
+        Graphics.Blit(fixedIlsands, runTimeTexture);
+        Graphics.Blit(runTimeTexture, paintedTexture);
 
     }
 

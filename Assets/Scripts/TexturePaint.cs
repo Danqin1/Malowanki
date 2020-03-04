@@ -52,20 +52,20 @@ public class TexturePaint : MonoBehaviour
         //meshMaterial.SetTexture(albedo.id, albedo.runTimeTexture);
         //meshMaterial.EnableKeyword("_METALLICGLOSSMAP");
         // Command buffer inialzation ------------------------------------------------
-        cb_markingIlsdands = new CommandBuffer
-        {
-            name = "markingIlsnads"
-        };
-        cb_markingIlsdands.SetRenderTarget(markedIlsandes);
+        //cb_markingIlsdands = new CommandBuffer
+        //{
+        //    name = "markingIlsnads"
+        //};
+        //cb_markingIlsdands.SetRenderTarget(markedIlsandes);
         Material mIlsandMarker = new Material(ilsandMarkerShader);
-        cb_markingIlsdands.DrawMesh(meshToDraw, Matrix4x4.identity, mIlsandMarker);
-        mainC.AddCommandBuffer(CameraEvent.AfterDepthTexture, cb_markingIlsdands);
+        //cb_markingIlsdands.DrawMesh(meshToDraw, Matrix4x4.identity, mIlsandMarker);
+        //mainC.AddCommandBuffer(CameraEvent.AfterDepthTexture, cb_markingIlsdands);
         albedo.SetActiveTexture(mainC);
     }
     private void Update()
     {
-        if (numberOfFrames > 2) mainC.RemoveCommandBuffer(CameraEvent.AfterDepthTexture, cb_markingIlsdands);
-        numberOfFrames++;
+        //if (numberOfFrames > 2) mainC.RemoveCommandBuffer(CameraEvent.AfterDepthTexture, cb_markingIlsdands);
+        //numberOfFrames++;
         albedo.UpdateShaderParameters(meshGameobject.transform.localToWorldMatrix);
         if (Input.GetMouseButton(0))
         {
@@ -75,7 +75,7 @@ public class TexturePaint : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("PaintObject"))
                 {
                     GameObject flareObj = Instantiate(flare, hit.point, Quaternion.identity);
-                    flareObj.transform.parent = flareBox.transform;
+                    flareObj.transform.parent = flareBox.transform; 
                     Shader.SetGlobalVector("_Mouse", new Vector4(hit.point.x, hit.point.y, hit.point.z, 1));
                 }
             }
@@ -85,10 +85,14 @@ public class TexturePaint : MonoBehaviour
             ResetMousePos();
         }
 
-        print(Shader.GetGlobalVector("_help"));
+       // print(Shader.GetGlobalVector("_Mouse"));
     }
     private void ResetMousePos()
     {
         Shader.SetGlobalVector("_Mouse", new Vector4(0, 0, 0, 0));
+    }
+    private void OnGUI()
+    {
+        GUI.DrawTexture(new Rect(0, 0, 256, 256), albedo.paintedTexture, ScaleMode.ScaleToFit);
     }
 }

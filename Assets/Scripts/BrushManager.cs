@@ -1,42 +1,52 @@
 ﻿using UnityEngine;
 
 public class BrushManager : MonoBehaviour
-{    
+{
+    public Material drawMat;
     void Start()
     {
         //initializing values
-        Shader.SetGlobalColor("_BrushColor",Color.black);
-        Shader.SetGlobalFloat("_BrushOpacity",1);//
-        Shader.SetGlobalFloat("_BrushSize", 0.3f);
-        Shader.SetGlobalFloat("_BrushHardness", 1);
+        drawMat.SetVector("_DrawColor", Color.red);
+        //Shader.SetGlobalFloat("_BrushOpacity",1);//
+        drawMat.SetFloat("_BrushSize", 100f);
+        //Shader.SetGlobalFloat("_BrushHardness", 1);
     }
 
     public void SetColor(string color)
     {
         switch(color)
         {
-            case "red" : Shader.SetGlobalColor("_BrushColor",Color.red);
+            case "red" :
+                drawMat.SetVector("_DrawColor", Color.red);
+                break;
+            case "blue" :
+                drawMat.SetVector("_DrawColor", Color.blue);
+                break;
+            case "green" :
+                drawMat.SetVector("_DrawColor", Color.green);
+                break;
+            case "rubber" :
+                drawMat.SetVector("_DrawColor", Color.white);// rubber as white color
+                break;
+            case "black" :
+                drawMat.SetVector("_DrawColor", Color.black);
             break;
-            case "blue" : Shader.SetGlobalColor("_BrushColor",Color.blue);
+            case "cyan" :
+                drawMat.SetVector("_DrawColor", Color.cyan);
             break;
-            case "green" : Shader.SetGlobalColor("_BrushColor",Color.green);
+            case "magenta" :
+                drawMat.SetVector("_DrawColor", Color.magenta);
             break;
-            case "rubber" : Shader.SetGlobalColor("_BrushColor",Color.white);// rubber as white color
+            case "gray" :
+                drawMat.SetVector("_DrawColor", Color.gray);
             break;
-            case "black" : Shader.SetGlobalColor("_BrushColor",Color.black);
-            break;
-            case "cyan" : Shader.SetGlobalColor("_BrushColor",Color.cyan);
-            break;
-            case "magenta" : Shader.SetGlobalColor("_BrushColor",Color.magenta);
-            break;
-            case "gray" : Shader.SetGlobalColor("_BrushColor",Color.gray);
-            break;
-            case "yellow" : Shader.SetGlobalColor("_BrushColor",Color.yellow);
+            case "yellow" :
+                drawMat.SetVector("_DrawColor", Color.yellow);
             break;
         }
     }
     public void SetBrushSize(float size)
     {
-        Shader.SetGlobalFloat("_BrushSize", size);
+        drawMat.SetFloat("_BrushSize", size*1000);
     }
 }
