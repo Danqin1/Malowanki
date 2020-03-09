@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Coloring");
     }
+    public void PlayPaintingModels()
+    {
+        SceneManager.LoadScene("PaintingModels");
+    }
     public void PlayAdding()
     {
         SceneManager.LoadScene("Adding");

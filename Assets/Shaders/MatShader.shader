@@ -2,10 +2,10 @@
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (0,0,0,0)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _SplatTex("SplatMap", 2D) = "black" {}
-        _SplatCol("SplatColor", Color) = (1,0,0,0)
+        _SplatTex("SplatMap", 2D) = "white" {}
+        _SplatCol("SplatColor", Color) = (0,0,0,0)
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
     }
@@ -43,7 +43,7 @@
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            half amount = tex2Dlod(_SplatTex, float4(IN.uv_SplatTex, 0, 0)).r;
+            half amount = tex2Dlod(_SplatTex, float4(IN.uv_SplatTex, 0, 0)).a;
             fixed4 c = lerp(tex2D(_MainTex, IN.uv_MainTex) * _Color, tex2D(_SplatTex, IN.uv_SplatTex) * _SplatCol, amount);
             // Albedo comes from a texture tinted by color
             //fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;

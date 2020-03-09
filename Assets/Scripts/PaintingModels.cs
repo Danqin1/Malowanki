@@ -22,7 +22,7 @@ public class PaintingModels : MonoBehaviour
     {
         Vector3 ray = Camera.main.ScreenToWorldPoint(pos);
         RaycastHit2D hitInfo = Physics2D.Raycast(ray, Vector2.zero);
-        if (hitInfo.transform.gameObject.CompareTag("Paintable"))
+        if (hitInfo && hitInfo.transform.gameObject.CompareTag("Paintable"))
         {
             hitInfo.transform.gameObject.GetComponent<SpriteRenderer>().color = paintingUI.BrushColor;
         }

@@ -4,7 +4,8 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Mouse ("Mouse" , Vector) = (0,0,0,0)
-        _Color ("Color", Color) = (1,0,0,0)
+        _DrawColor ("Draw Color", Color) = (0,0,0,0)
+        _BrushSize("Brush Size", float) = 50
     }
     SubShader
     {
@@ -34,7 +35,8 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            fixed4 _Mouse, _Color;
+            fixed4 _Mouse, _DrawColor;
+            float _BrushSize;
 
             v2f vert (appdata v)
             {
@@ -48,9 +50,9 @@
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-                float draw = pow(saturate(1 - distance(i.uv, _Mouse.xy)), 50); //jesli jest takie same bedzie - 1 jesli nie to 0
-                fixed4 drawCol = _Color * (draw * 1);
-                return saturate(col + drawCol); // dodaje do siebie kolory
+                float draw = pow(saturate(1 - distance(i.uv, _Mouse.xy)), 400); //jesli jest takie same bedzie - 1 jesli nie to 0
+                fixed4 drawCol = _DrawColor * (draw * _BrushSize*100);
+                return saturate(col+drawCol); // dodaje do siebie kolory
             }
             ENDCG
         }
