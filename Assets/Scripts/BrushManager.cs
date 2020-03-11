@@ -5,11 +5,8 @@ public class BrushManager : MonoBehaviour
     public Material drawMat;
     void Start()
     {
-        //initializing values
-        drawMat.SetVector("_DrawColor", Color.red);
-        //Shader.SetGlobalFloat("_BrushOpacity",1);//
+        drawMat.color = Color.black;
         drawMat.SetFloat("_BrushSize", 100f);
-        //Shader.SetGlobalFloat("_BrushHardness", 1);
     }
 
     public void SetColor(string color)
@@ -17,31 +14,31 @@ public class BrushManager : MonoBehaviour
         switch(color)
         {
             case "red" :
-                drawMat.SetVector("_DrawColor", Color.red);
+                drawMat.color = Color.red;
                 break;
             case "blue" :
-                drawMat.SetVector("_DrawColor", Color.blue);
+                drawMat.color = Color.blue;
                 break;
             case "green" :
-                drawMat.SetVector("_DrawColor", Color.green);
+                drawMat.color = Color.green;
                 break;
             case "rubber" :
-                drawMat.SetVector("_DrawColor", Color.white);// rubber as white color
+                drawMat.color = Color.white;// rubber as white color
                 break;
             case "black" :
-                drawMat.SetVector("_DrawColor", Color.black);
+                drawMat.color = Color.black;
             break;
             case "cyan" :
-                drawMat.SetVector("_DrawColor", Color.cyan);
+                drawMat.color = Color.cyan;
             break;
             case "magenta" :
-                drawMat.SetVector("_DrawColor", Color.magenta);
+                drawMat.color = Color.magenta;
             break;
             case "gray" :
-                drawMat.SetVector("_DrawColor", Color.gray);
+                drawMat.color = Color.gray;
             break;
             case "yellow" :
-                drawMat.SetVector("_DrawColor", Color.yellow);
+                drawMat.color = Color.yellow;
             break;
         }
     }

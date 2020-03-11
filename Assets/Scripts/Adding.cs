@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Adding : MonoBehaviour
 {
-    public AudioClip winClip;
+    public AudioManagement audioManager;
     public GameObject WinFlare;
+    public GameObject eventSystem;
+
+    private readonly int minValues = 1;
+    public int maxValues;
+
+    private int scoreRate = 10; // added to player score
+    //buttons
     public Button Number1;
     public Button Number2;
     public Button E1;
     public Button E2;
     public Button E3;
+    //text in btns
     private Text N1Text;
     private Text N2Text;
     private Text E1Text;
@@ -21,9 +28,10 @@ public class Adding : MonoBehaviour
     int score;
 
     private List<int> values;
-    private List<Text> listOfScores;
+    private List<Text> listOfScores;//list of scores to choose
     private void Start()
     {
+        SetLevel();
         values = new List<int>();
         listOfScores = new List<Text>();
         for (int i = 1; i <= 5; i++)
@@ -40,20 +48,44 @@ public class Adding : MonoBehaviour
         listOfScores.Add(E3Text);
         SetValues();
     }
+    private void SetLevel()
+    {
+        int addScore = PlayerPrefs.GetInt("AddingScore");
+        if (addScore < 1000) // setting level from experience
+        {
+            maxValues = 99;
+            if (addScore < 700)
+            {
+                maxValues = 70;
+                if (addScore < 500)
+                {
+                    maxValues = 50;
+                    if (addScore < 300)
+                    {
+                        maxValues = 30;
+                        if (addScore < 100) maxValues = 10;
+                    }
+                }
+            }
+        }
+        else maxValues = 99;
+    }
     private void SetValues()
     {
-        int _1 = Random.Range(1, 5);
+        int _1 = Random.Range(minValues, maxValues);
         N1Text.text = _1.ToString();
-        int _2 = Random.Range(1, 5);
+        int _2 = Random.Range(minValues, maxValues);
         N2Text.text = _2.ToString();
         score = _1+_2;
+        if (score > maxValues) SetValues(); // checking if score is in range
+
         bool exists = false;
         foreach (var item in listOfScores)
         {
             item.transform.parent.gameObject.SetActive(true);
-            item.text = Random.Range(2, 10).ToString();
+            item.text = Random.Range(minValues, maxValues).ToString();
         }
-        foreach (var item in listOfScores)
+        foreach (var item in listOfScores)// checking good value
         {
             if (int.Parse(item.text) == score)
             {
@@ -65,27 +97,53 @@ public class Adding : MonoBehaviour
             int pos = Random.Range(0, 2);
             listOfScores[pos].text = score.ToString();
         }
+        CheckTheSameValues();
+    }
+    private void CheckTheSameValues()
+    {
+        foreach (var item in listOfScores)// checking the same values
+        {
+            int count = 0;
+            int tmp = int.Parse(item.text);
+            for (int i = 0; i < listOfScores.Count; i++)
+            {
+                if (tmp == int.Parse(listOfScores[i].text))
+                {
+                    count++;
+                    if (count > 1)
+                    {
+                        int newValue = Random.Range(minValues, maxValues);
+                        if (newValue == int.Parse(listOfScores[i].text)) CheckTheSameValues();
+                        listOfScores[i].text = newValue.ToString();
+                    }
+                }
+            }
+        }
     }
     private void Win(Transform transf)
-    {
-        
-        Vector3 pos = transf.position;
-        pos.x = pos.x / Camera.main.pixelWidth;
-        pos.y = pos.y / Camera.main.pixelHeight;
-        print("Win");
-        AudioSource.PlayClipAtPoint(winClip, pos);
+    {  
+        Vector3 pos = Camera.main.ScreenToWorldPoint(transf.position);
+        audioManager.PlayAddingWinClip(pos);
         for (int i = 0; i < 3; i++)
         {
-           GameObject flare = Instantiate(WinFlare, pos, Quaternion.identity);
+           Instantiate(WinFlare, pos, Quaternion.identity);
         }
         StartCoroutine(Reset());
+        PlayerPrefs.SetInt("AddingScore", PlayerPrefs.GetInt("AddingScore") + scoreRate);
+    }
+    private void BadNumber(Button btn)
+    {
+        audioManager.PlayAddingBadClip(Camera.main.ScreenToWorldPoint(btn.transform.position));
+        btn.gameObject.SetActive(false);
     }
     IEnumerator Reset()
     {
+        eventSystem.SetActive(false);
         yield return new WaitForSeconds(3);
         SetValues();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        eventSystem.SetActive(true);
     }
+    //checking win
     public void Btn1()
     {
         if(int.Parse(E1Text.text) == score)
@@ -94,7 +152,7 @@ public class Adding : MonoBehaviour
         }
         else
         {
-            E1.gameObject.SetActive(false);
+            BadNumber(E1);
         }
     }
     public void Btn2()
@@ -105,7 +163,7 @@ public class Adding : MonoBehaviour
         }
         else
         {
-            E2.gameObject.SetActive(false);
+            BadNumber(E2);
         }
     }
     public void Btn3()
@@ -116,7 +174,7 @@ public class Adding : MonoBehaviour
         }
         else
         {
-            E3.gameObject.SetActive(false);
+            BadNumber(E3);
         }
     }
 }

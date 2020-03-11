@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayFreePaint()
     {
-        SceneManager.LoadScene("Coloring");
+        SceneManager.LoadScene("DrawingWithInstantiate");
     }
     public void PlayPaintingModels()
     {
