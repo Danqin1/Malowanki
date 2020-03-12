@@ -130,6 +130,7 @@ public class Adding : MonoBehaviour
         }
         StartCoroutine(Reset());
         PlayerPrefs.SetInt("AddingScore", PlayerPrefs.GetInt("AddingScore") + scoreRate);
+        SetLevel();
     }
     private void BadNumber(Button btn)
     {
