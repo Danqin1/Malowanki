@@ -20,7 +20,7 @@ public class PaintingModelUI : ColoringUI
             case "green":
                 BrushColor = Color.green;
                 break;
-            case "rubber":
+            case "white":
                 BrushColor = Color.white;// rubber as white color
                 break;
             case "black":
@@ -30,13 +30,22 @@ public class PaintingModelUI : ColoringUI
                 BrushColor = Color.cyan;
                 break;
             case "magenta":
-                BrushColor = Color.magenta;
+                BrushColor = new Color(1,0.41f,0.70f);
                 break;
             case "gray":
                 BrushColor = Color.gray;
                 break;
             case "yellow":
                 BrushColor = Color.yellow;
+                break;
+            case "brown":
+                BrushColor = new Color(0.56f, 0.39f, 0);
+                break;
+            case "orange":
+                BrushColor = new Color(1, 0.65f, 0);
+                break;
+            case "violet":
+                BrushColor = new Color(0.61f, 0, 0.74f);
                 break;
         }
     }

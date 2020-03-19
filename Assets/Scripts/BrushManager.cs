@@ -22,7 +22,7 @@ public class BrushManager : MonoBehaviour
             case "green" :
                 drawMat.color = Color.green;
                 break;
-            case "rubber" :
+            case "white" :
                 drawMat.color = Color.white;// rubber as white color
                 break;
             case "black" :
@@ -39,6 +39,9 @@ public class BrushManager : MonoBehaviour
             break;
             case "yellow" :
                 drawMat.color = Color.yellow;
+            break;
+            case "brown":
+                drawMat.color = new Color(143, 100, 0);
             break;
         }
     }

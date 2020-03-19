@@ -50,25 +50,30 @@ public class Adding : MonoBehaviour
     }
     private void SetLevel()
     {
-        int addScore = PlayerPrefs.GetInt("AddingScore");
-        if (addScore < 1000) // setting level from experience
+        int level = PlayerPrefs.GetInt("AddingLevel");
+        switch (level)
         {
-            maxValues = 99;
-            if (addScore < 700)
-            {
-                maxValues = 70;
-                if (addScore < 500)
-                {
-                    maxValues = 50;
-                    if (addScore < 300)
-                    {
-                        maxValues = 30;
-                        if (addScore < 100) maxValues = 10;
-                    }
-                }
-            }
+            case 10:
+                maxValues = 10;
+                break;
+            case 20:
+                maxValues = 20;
+                break;
+            case 30:
+                maxValues = 30;
+                break;
+            case 40:
+                maxValues = 40;
+                break;
+            case 50:
+                maxValues = 50;
+                break;
+            case 100:
+                maxValues = 100;
+                break;
+            default:
+                break;
         }
-        else maxValues = 99;
     }
     private void SetValues()
     {

@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
     public GameObject MainMenuCanvas;
     public GameObject PlayModesCanvas;
     public GameObject ModelsCanvas;
+    public GameObject AddingLevels;
     public void PlayButton()
     {
         MainMenuCanvas.SetActive(false);
@@ -20,14 +21,25 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("DrawingWithInstantiate");
     }
-    
+    //adding -------------------------------------------------------
+    public void SetAddingLevel(int level)
+    {
+        PlayerPrefs.SetInt("AddingLevel", level);
+        SceneManager.LoadScene("Adding");
+    }
+
     public void PlayAdding()
     {
-        SceneManager.LoadScene("Adding");
+        PlayModesCanvas.SetActive(false);
+        AddingLevels.SetActive(true);
     }
     public void PaintButterfly()
     {
         SceneManager.LoadScene("Butterfly");
+    }
+    public void PaintGiraffe()
+    {
+        SceneManager.LoadScene("Giraffe");
     }
     public void PaintBear()
     {
@@ -42,6 +54,7 @@ public class MainMenu : MonoBehaviour
     {
         ModelsCanvas.SetActive(false);
         PlayModesCanvas.SetActive(true);
+        AddingLevels.SetActive(false);
     }
     public void Quit()
     {
