@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 740b4357003fd7b439d421afbc1ba78a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioManager: {instanceID: 0}
+  - WinFlare: {fileID: 1098245772625174, guid: d350ad29b27c64ecbad769fd1feff30a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Adding : MonoBehaviour
 {
     public AudioManagement audioManager;
-    public GameObject WinFlare;
+    public EffectsManager effectsManager;
     public GameObject eventSystem;
 
     private readonly int minValues = 1;
@@ -126,13 +126,8 @@ public class Adding : MonoBehaviour
         }
     }
     private void Win(Transform transf)
-    {  
-        Vector3 pos = Camera.main.ScreenToWorldPoint(transf.position);
-        audioManager.PlayAddingWinClip(pos);
-        for (int i = 0; i < 3; i++)
-        {
-           Instantiate(WinFlare, pos, Quaternion.identity);
-        }
+    {
+        effectsManager.Win(transf.position);
         StartCoroutine(Reset());
         PlayerPrefs.SetInt("AddingScore", PlayerPrefs.GetInt("AddingScore") + scoreRate);
         SetLevel();

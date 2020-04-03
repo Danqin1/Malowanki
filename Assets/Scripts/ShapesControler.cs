@@ -2,6 +2,7 @@
 
 public class ShapesControler : MonoBehaviour
 {
+    public EffectsManager effectsManager;
     Vector3 initPosition;
     Vector3 ray;
     RaycastHit2D hit;
@@ -57,6 +58,10 @@ public class ShapesControler : MonoBehaviour
                     clickedObj.transform.position = basePosition;
                     win++;
                     clickedObj = null;
+                    if (win >= 3)
+                    {
+                        Win(Input.mousePosition);
+                    }
                 }
                 else
                 {
@@ -72,7 +77,6 @@ public class ShapesControler : MonoBehaviour
             hit = Physics2D.Raycast(ray, Vector2.zero);
             if (hit && hit.transform.gameObject.CompareTag("Shape"))
             {
-                print("clicked" + hit.transform.gameObject.name);
                 if (Input.touchCount > 0)
                 {
                     switch (Input.GetTouch(0).phase)
@@ -84,7 +88,7 @@ public class ShapesControler : MonoBehaviour
                         {
                             if (!clickedObj)
                             {
-                                initPosition = hit.transform.gameObject.transform.position;
+                                initPosition = hit.transform.gameObject.transform.position;// saving initial position
                                 foreach (var item in sprites)
                                 {
                                     if (item.name == hit.transform.gameObject.name + "Base")
@@ -129,7 +133,7 @@ public class ShapesControler : MonoBehaviour
                             }
                             else
                             {
-                                clickedObj.transform.position = initPosition;
+                                clickedObj.transform.position = initPosition;//if bad shape returning clicked obj
                                 clickedObj = null;
                             }
                         }
@@ -140,4 +144,9 @@ public class ShapesControler : MonoBehaviour
                 }
             }
         }
-    } 
+    private void Win(Vector3 pos)
+    {
+        pos.z += 5;
+        effectsManager.Win(pos);
+    }
+} 

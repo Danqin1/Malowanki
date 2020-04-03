@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 5226427297648463922}
   - component: {fileID: 8117182401089074765}
   - component: {fileID: 1818957263}
+  - component: {fileID: 92010027280636111}
   m_Layer: 5
   m_Name: AddingUI
   m_TagString: Untagged
@@ -326,9 +327,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
+  effectsManager: {fileID: 92010027280636111}
   WinFlare: {fileID: 1933607824282986, guid: 3c87503deada045dfad4b3f34d340ae0, type: 3}
   eventSystem: {fileID: 0}
-  minValues: 0
   maxValues: 0
   Number1: {fileID: 8117182400838047393}
   Number2: {fileID: 8117182401753468576}
@@ -443,6 +444,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &92010027280636111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117182400774582653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740b4357003fd7b439d421afbc1ba78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  WinFlare: {fileID: 1933607824282986, guid: 3c87503deada045dfad4b3f34d340ae0, type: 3}
 --- !u!1 &8117182400786336412
 GameObject:
   m_ObjectHideFlags: 0
