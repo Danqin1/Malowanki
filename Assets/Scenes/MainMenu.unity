@@ -156,8 +156,8 @@ Camera:
   m_GameObject: {fileID: 437922867}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -566,6 +566,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!224 &1976036034 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6613127024451444110, guid: a612b860478c41147ab6b71acd8112b5,
@@ -643,13 +644,25 @@ CanvasRenderer:
   m_GameObject: {fileID: 2144547998}
   m_CullTransparentMesh: 0
 --- !u!1001 &2392973018563924213
+=======
+--- !u!1001 &1754485415
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 805813334}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 2392973018220784193, guid: 4da34e96c00c45b46b44c102b2b3bba8,
+=======
+    - target: {fileID: 6004823984229317728, guid: d7e150037671f8e4aac667eea521a981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068924188158143921, guid: d7e150037671f8e4aac667eea521a981,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -860,11 +873,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6613127024451444110, guid: a612b860478c41147ab6b71acd8112b5,
         type: 3}
+<<<<<<< Updated upstream
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613127024451444110, guid: a612b860478c41147ab6b71acd8112b5,
         type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
