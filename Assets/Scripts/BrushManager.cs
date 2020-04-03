@@ -2,12 +2,11 @@
 
 public class BrushManager : MonoBehaviour
 {
-    public Painter painter;
+    public Material drawMat;
     void Start()
     {
-        //initializing values
-        painter.BrushColor = Color.red;
-        painter.BrushSize = 1f;
+        drawMat.color = Color.black;
+        drawMat.SetFloat("_BrushSize", 100f);
     }
 
     public void SetColor(string color)
@@ -15,39 +14,30 @@ public class BrushManager : MonoBehaviour
         switch(color)
         {
             case "red" :
-                painter.BrushColor = Color.red;
-            break;
+                drawMat.color = Color.red;
+                break;
             case "blue" :
-                painter.BrushColor = Color.blue;
-            break;
+                drawMat.color = Color.blue;
+                break;
             case "green" :
-                painter.BrushColor = Color.green;
-            break;
-            case "rubber" :
-                painter.BrushColor = Color.white;// rubber as white color
-            break;
+                drawMat.color = Color.green;
+                break;
+            case "white" :
+                drawMat.color = Color.white;// rubber as white color
+                break;
             case "black" :
-                painter.BrushColor = Color.black;
+                drawMat.color = Color.black;
             break;
             case "cyan" :
-                painter.BrushColor = Color.cyan;
+                drawMat.color = Color.cyan;
             break;
             case "magenta" :
-<<<<<<< Updated upstream
-                painter.BrushColor = Color.magenta;
-            break;
-=======
                 drawMat.color = new Color(1, 0.41f, 0.70f);
                 break;
->>>>>>> Stashed changes
             case "gray" :
-                painter.BrushColor = Color.gray;
+                drawMat.color = Color.gray;
             break;
             case "yellow" :
-<<<<<<< Updated upstream
-                painter.BrushColor = Color.yellow;
-            break;
-=======
                 drawMat.color = Color.yellow;
             break;
             case "brown":
@@ -59,11 +49,10 @@ public class BrushManager : MonoBehaviour
             case "violet":
                 drawMat.color = new Color(0.61f, 0, 0.74f);
                 break;
->>>>>>> Stashed changes
         }
     }
     public void SetBrushSize(float size)
     {
-        painter.BrushSize = size;
+        drawMat.SetFloat("_BrushSize", size*1000);
     }
 }

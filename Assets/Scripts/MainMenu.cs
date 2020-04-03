@@ -3,11 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void Play()
+    public GameObject MainMenuCanvas;
+    public GameObject PlayModesCanvas;
+    public GameObject ModelsCanvas;
+    public GameObject AddingLevels;
+    public void PlayButton()
     {
-<<<<<<< Updated upstream
-        SceneManager.LoadScene("Coloring");
-=======
         MainMenuCanvas.SetActive(false);
         PlayModesCanvas.SetActive(true);
     }
@@ -58,7 +59,6 @@ public class MainMenu : MonoBehaviour
         ModelsCanvas.SetActive(false);
         PlayModesCanvas.SetActive(true);
         AddingLevels.SetActive(false);
->>>>>>> Stashed changes
     }
     public void Quit()
     {

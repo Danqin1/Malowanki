@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0e211a6d6b1e02e46bf50447244ae343
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AddingWinClip: {fileID: 8300000, guid: 984ede236772db741931ce76cb20a47d, type: 3}
+  - AddingBadNrClip: {fileID: 8300000, guid: 9a229dcae4cc8294ea8ed8122548bd4c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
