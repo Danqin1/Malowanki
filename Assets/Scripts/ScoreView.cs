@@ -12,6 +12,6 @@ public class ScoreView : MonoBehaviour
     }
     void Update()
     {
-        _text.text = PlayerPrefs.GetInt("AddingScore").ToString();
+        _text.text = PlayerPrefs.GetInt(PlayerPrefs.GetString("MathMode","Adding")+"Score",0).ToString();
     }
 }

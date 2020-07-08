@@ -11,31 +11,31 @@ public class DisplayAddindLevelsScriptUI : MonoBehaviour
     public Button btn40;
     public Button btn50;
     public Button btn100;
-    private int addingLevel;
+    private int Level;
     private void Awake()
     {
-        addingLevel = PlayerPrefs.GetInt("AddingScore");
-        if (addingLevel < 600)
+        Level = PlayerPrefs.GetInt(PlayerPrefs.GetString("MathMode")+"Score");
+        if (Level < 600)
         {
             btn100.transform.GetChild(0).GetComponent<Text>().text = "X";
             btn100.interactable = false;
         }
-        if (addingLevel < 500)
+        if (Level < 500)
         {
             btn50.transform.GetChild(0).GetComponent<Text>().text = "X";
             btn50.interactable = false;
         }
-        if (addingLevel < 400)
+        if (Level < 400)
         {
             btn40.transform.GetChild(0).GetComponent<Text>().text = "X";
             btn40.interactable = false;
         }
-        if (addingLevel < 300)
+        if (Level < 300)
         {
             btn30.transform.GetChild(0).GetComponent<Text>().text = "X";
             btn30.interactable = false;
         }
-        if (addingLevel < 200)
+        if (Level < 200)
         {
             btn20.transform.GetChild(0).GetComponent<Text>().text = "X";
             btn20.interactable = false;
