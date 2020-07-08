@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShapesControler : MonoBehaviour
 {
@@ -130,6 +132,10 @@ public class ShapesControler : MonoBehaviour
                                 clickedObj.transform.position = basePosition;
                                 win++;
                                 clickedObj = null;
+                                if (win >= 3)
+                                {
+                                    Win(Input.mousePosition);
+                                }
                             }
                             else
                             {
@@ -148,5 +154,11 @@ public class ShapesControler : MonoBehaviour
     {
         pos.z += 5;
         effectsManager.Win(pos);
+        StartCoroutine(GoOut());
+    }
+    IEnumerator GoOut()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
     }
 } 
