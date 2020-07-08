@@ -1,5 +1,5 @@
 # Malowanki
-Link to tests on Google Play  -  https://play.google.com/apps/internaltest/4700351162027878607
+Link to Google Play  -  https://play.google.com/store/apps/details?id=com.DanStudio.ColoLearn
 Learning game for Kids
 ![PaintModel](https://user-images.githubusercontent.com/38262565/77476892-c36b8f80-6e1b-11ea-8a44-0a513c38bad5.jpg)
 ![add](https://user-images.githubusercontent.com/38262565/77476922-d5e5c900-6e1b-11ea-8deb-3f6b3b74bb4c.jpg)
