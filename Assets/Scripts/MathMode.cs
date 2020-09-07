@@ -64,6 +64,10 @@ public class MathMode : MonoBehaviour
         {
             level = PlayerPrefs.GetInt("DivideLevel", 0);
         }
+        else if (SceneManager.GetActiveScene().name.Equals("Substract"))
+        {
+            level = PlayerPrefs.GetInt("SubstractLevel", 0);
+        }
         switch (level)
         {
             case 10:
@@ -106,6 +110,14 @@ public class MathMode : MonoBehaviour
         {
             score = _1 / _2;
             if ((_1 % _2) != 0)
+            {
+                SetValues();
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Substract"))
+        {
+            score = _1 - _2;
+            if ((_1 - _2) < 0)
             {
                 SetValues();
             }
@@ -160,15 +172,19 @@ public class MathMode : MonoBehaviour
         StartCoroutine(Reset());
         if (SceneManager.GetActiveScene().name.Equals("Multiply"))
         {
-            PlayerPrefs.SetInt("MultiplyScore", PlayerPrefs.GetInt("MultiplyScore") + scoreRate);
+            PlayerPrefs.SetInt("MultiplyScore", PlayerPrefs.GetInt("MultiplyScore",0) + scoreRate);
         }
         else if (SceneManager.GetActiveScene().name.Equals("Adding"))
         {
-            PlayerPrefs.SetInt("AddingScore", PlayerPrefs.GetInt("AddingScore") + scoreRate);
+            PlayerPrefs.SetInt("AddingScore", PlayerPrefs.GetInt("AddingScore",0) + scoreRate);
         }
         else if (SceneManager.GetActiveScene().name.Equals("Divide"))
         {
-            PlayerPrefs.SetInt("DivideScore", PlayerPrefs.GetInt("DivideScore") + scoreRate);
+            PlayerPrefs.SetInt("DivideScore", PlayerPrefs.GetInt("DivideScore",0) + scoreRate);
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Substract"))
+        {
+            PlayerPrefs.SetInt("SubstractScore", PlayerPrefs.GetInt("SubstractScore",0) + scoreRate);
         }
         SetLevel();
     }

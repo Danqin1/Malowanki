@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 568391463088027036}
   - component: {fileID: 8860817833383038300}
   - component: {fileID: 8063745126528200716}
+  - component: {fileID: 5454535212708268382}
   m_Layer: 5
   m_Name: Magenta
   m_TagString: Untagged
@@ -201,6 +202,25 @@ MonoBehaviour:
           m_StringArgument: magenta
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &5454535212708268382
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112480005184198457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &356788025394229513
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +235,7 @@ GameObject:
   - component: {fileID: 829789783876398038}
   - component: {fileID: 356788025394229511}
   - component: {fileID: 356788025394229512}
+  - component: {fileID: 1098708401761122475}
   m_Layer: 5
   m_Name: DrawingUI
   m_TagString: Untagged
@@ -341,6 +362,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawMat: {fileID: 2100000, guid: 3e3b85cc5651b4d4f9413f945f52b458, type: 2}
+--- !u!114 &1098708401761122475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356788025394229513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4183fa9c374b04fb4475643762a012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crayons:
+  - {fileID: 2279413066328299668}
+  - {fileID: 2303900159277864386}
+  - {fileID: 1066364352575212078}
+  - {fileID: 4494413565084860433}
+  - {fileID: 6013740931393055584}
+  - {fileID: 112480005184198457}
+  - {fileID: 6315271092578745052}
+  - {fileID: 4414370163179930787}
+  - {fileID: 7784662523340645972}
+  - {fileID: 4568085505543747736}
+  - {fileID: 8797530833310242858}
+  - {fileID: 8525662807778783953}
 --- !u!1 &356788026109921067
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +657,7 @@ GameObject:
   - component: {fileID: 4293216266743144404}
   - component: {fileID: 3525973673470954386}
   - component: {fileID: 8727282504920571962}
+  - component: {fileID: 1863056221638928979}
   m_Layer: 5
   m_Name: Green
   m_TagString: Untagged
@@ -634,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.099976, y: -87.60004}
+  m_AnchoredPosition: {x: 12.100098, y: -87.60004}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4293216266743144404
@@ -727,6 +774,36 @@ MonoBehaviour:
           m_StringArgument: green
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1098708401761122475}
+        m_MethodName: PlayCrayonAnimation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1863056221638928979
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066364352575212078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2279413066328299668
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +816,7 @@ GameObject:
   - component: {fileID: 685773257299531768}
   - component: {fileID: 1692825530532349695}
   - component: {fileID: 8494346774685569265}
+  - component: {fileID: 172285996682233047}
   m_Layer: 5
   m_Name: Blue
   m_TagString: Untagged
@@ -762,7 +840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.099976, y: 7.400055}
+  m_AnchoredPosition: {x: 12.100098, y: 7.400055}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &685773257299531768
@@ -855,6 +933,36 @@ MonoBehaviour:
           m_StringArgument: blue
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1098708401761122475}
+        m_MethodName: PlayCrayonAnimation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &172285996682233047
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279413066328299668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2303900159277864386
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +975,7 @@ GameObject:
   - component: {fileID: 6342015796379866116}
   - component: {fileID: 2615560486119056158}
   - component: {fileID: 4432391325684720813}
+  - component: {fileID: 6540052773272399899}
   m_Layer: 5
   m_Name: Red
   m_TagString: Untagged
@@ -890,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.099976, y: -41.59999}
+  m_AnchoredPosition: {x: 12.100098, y: -41.59999}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6342015796379866116
@@ -983,6 +1092,36 @@ MonoBehaviour:
           m_StringArgument: red
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1098708401761122475}
+        m_MethodName: PlayCrayonAnimation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &6540052773272399899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303900159277864386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2799114498195387550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1207,7 @@ GameObject:
   - component: {fileID: 1078668160207955674}
   - component: {fileID: 7046559168904915397}
   - component: {fileID: 1799749037729088773}
+  - component: {fileID: 5471718744070524911}
   m_Layer: 5
   m_Name: Brown
   m_TagString: Untagged
@@ -1091,7 +1231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -24.999939, y: 179.00002}
+  m_AnchoredPosition: {x: -25, y: 179}
   m_SizeDelta: {x: 200, y: 730}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1078668160207955674
@@ -1184,6 +1324,25 @@ MonoBehaviour:
           m_StringArgument: brown
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &5471718744070524911
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414370163179930787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4494413565084860433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1355,7 @@ GameObject:
   - component: {fileID: 3509876162789711817}
   - component: {fileID: 3438103575731874921}
   - component: {fileID: 6951338485280082196}
+  - component: {fileID: 8226733808889166329}
   m_Layer: 5
   m_Name: Cyan
   m_TagString: Untagged
@@ -1219,7 +1379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.099976, y: -135.6}
+  m_AnchoredPosition: {x: 12.100098, y: -135.6}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3509876162789711817
@@ -1312,6 +1472,25 @@ MonoBehaviour:
           m_StringArgument: cyan
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &8226733808889166329
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494413565084860433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4568085505543747736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1503,7 @@ GameObject:
   - component: {fileID: 6595329914110508301}
   - component: {fileID: 7585048929624724875}
   - component: {fileID: 1141568394478179978}
+  - component: {fileID: 3291635842509278198}
   m_Layer: 5
   m_Name: Violet
   m_TagString: Untagged
@@ -1347,7 +1527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25.099915, y: 131.40001}
+  m_AnchoredPosition: {x: -25.099854, y: 131.40002}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6595329914110508301
@@ -1440,6 +1620,25 @@ MonoBehaviour:
           m_StringArgument: violet
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &3291635842509278198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568085505543747736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6013740931393055584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1651,7 @@ GameObject:
   - component: {fileID: 4141500410087071498}
   - component: {fileID: 4366163096917831093}
   - component: {fileID: 5962190988771907535}
+  - component: {fileID: 3036268737157453169}
   m_Layer: 5
   m_Name: Gray
   m_TagString: Untagged
@@ -1475,7 +1675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.099976, y: -181.6}
+  m_AnchoredPosition: {x: 12.100098, y: -181.6}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4141500410087071498
@@ -1568,6 +1768,25 @@ MonoBehaviour:
           m_StringArgument: gray
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &3036268737157453169
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013740931393055584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6315271092578745052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1799,7 @@ GameObject:
   - component: {fileID: 2112669544491714733}
   - component: {fileID: 6383884401965569304}
   - component: {fileID: 4773777322445297572}
+  - component: {fileID: 6141654655650923221}
   m_Layer: 5
   m_Name: Yellow
   m_TagString: Untagged
@@ -1696,6 +1916,25 @@ MonoBehaviour:
           m_StringArgument: yellow
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &6141654655650923221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315271092578745052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7784662523340645972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1947,7 @@ GameObject:
   - component: {fileID: 6691442675884927776}
   - component: {fileID: 8209321815307211398}
   - component: {fileID: 187809402825657200}
+  - component: {fileID: 1894782538894316312}
   m_Layer: 5
   m_Name: Orange
   m_TagString: Untagged
@@ -1731,7 +1971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -24.799988, y: 84.30002}
+  m_AnchoredPosition: {x: -24.800049, y: 84.30005}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6691442675884927776
@@ -1824,6 +2064,25 @@ MonoBehaviour:
           m_StringArgument: orange
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1894782538894316312
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784662523340645972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7909311410390662052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,6 +2297,7 @@ GameObject:
   - component: {fileID: 5366357290831424866}
   - component: {fileID: 3093170611560832900}
   - component: {fileID: 7508827050958825650}
+  - component: {fileID: 1493967888}
   m_Layer: 5
   m_Name: White
   m_TagString: Untagged
@@ -2061,7 +2321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.200012, y: 54}
+  m_AnchoredPosition: {x: 12.199951, y: 54}
   m_SizeDelta: {x: 200, y: 730}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5366357290831424866
@@ -2154,6 +2414,36 @@ MonoBehaviour:
           m_StringArgument: white
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1098708401761122475}
+        m_MethodName: PlayCrayonAnimation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1493967888
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525662807778783953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8797530833310242858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2456,7 @@ GameObject:
   - component: {fileID: 8741499847593119044}
   - component: {fileID: 8678379204362001066}
   - component: {fileID: 9211338748163116058}
+  - component: {fileID: 2615966727718334498}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -2189,7 +2480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25.099915, y: 39.30002}
+  m_AnchoredPosition: {x: -25.099854, y: 39.30005}
   m_SizeDelta: {x: 200, y: 729.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8741499847593119044
@@ -2282,3 +2573,22 @@ MonoBehaviour:
           m_StringArgument: black
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &2615966727718334498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797530833310242858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d736812d8d4bde740b94c8ce46f197ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
