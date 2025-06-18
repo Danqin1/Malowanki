@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Draw : MonoBehaviour
+public class DrawController : MonoBehaviour
 {
     public Material outMat;
     public Material drawMat;

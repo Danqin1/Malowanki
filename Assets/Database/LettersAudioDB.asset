@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2ce34f3fc946f09e55332cfb6aacfa, type: 3}
+  m_Name: LettersAudioDB
+  m_EditorClassIdentifier: 
+  Letters:
+  - letter: A
+    audioClip: {fileID: 8300000, guid: c720f480a599994409b8decaadb79df1, type: 3}
+  - letter: B
+    audioClip: {fileID: 8300000, guid: bf75f171c3acb364ebc3e37d7c08ac38, type: 3}
+  - letter: C
+    audioClip: {fileID: 8300000, guid: 370517400c217584188a8dea1d629207, type: 3}
+  - letter: D
+    audioClip: {fileID: 8300000, guid: 3541b61666c124e439556d2a12391330, type: 3}
+  - letter: E
+    audioClip: {fileID: 8300000, guid: 06f89d88b7a9c594490ab49f73748979, type: 3}
+  - letter: F
+    audioClip: {fileID: 8300000, guid: 9e0bceeb07d64ce4b96971032efccf87, type: 3}
+  - letter: G
+    audioClip: {fileID: 8300000, guid: f6941700f6199b043a0d05c1243b351e, type: 3}
+  - letter: H
+    audioClip: {fileID: 8300000, guid: b0af8069975a938498104c1068cc2425, type: 3}
+  - letter: I
+    audioClip: {fileID: 8300000, guid: f697e96c9da19dd468f59ff669e6a260, type: 3}
+  - letter: J
+    audioClip: {fileID: 8300000, guid: 62a1097d4ab8e124cb9eff0ad27bb14c, type: 3}
+  - letter: K
+    audioClip: {fileID: 8300000, guid: 8a2cf5dc4341a9b4c8e4f04329a074e4, type: 3}
+  - letter: L
+    audioClip: {fileID: 8300000, guid: 81ae7b157b4827e488d40ce379f93d91, type: 3}
+  - letter: M
+    audioClip: {fileID: 8300000, guid: 9cbaa38fe32556d4c951ef5d9301b5e4, type: 3}
+  - letter: O
+    audioClip: {fileID: 8300000, guid: e909b49177cd66e42bd975b419ce0b84, type: 3}
+  - letter: P
+    audioClip: {fileID: 8300000, guid: 10afa6e7fc4d177498ca9c548864660a, type: 3}
+  - letter: R
+    audioClip: {fileID: 8300000, guid: 5a897cfdebcd46147af51cb92833483d, type: 3}
+  - letter: S
+    audioClip: {fileID: 8300000, guid: 23caa412694b8e64c851343b59ec0ac2, type: 3}
+  - letter: T
+    audioClip: {fileID: 8300000, guid: 29c563af7efea7045be9711cc22a746e, type: 3}
+  - letter: U
+    audioClip: {fileID: 8300000, guid: 24bf85972f96faf4fa3dd073ec0666fc, type: 3}
+  - letter: W
+    audioClip: {fileID: 8300000, guid: 46f01af7b11251b4bbcb83bec445755e, type: 3}
+  - letter: X
+    audioClip: {fileID: 8300000, guid: 3a235c82ba1b3eb4b918e9f060d3297c, type: 3}
+  - letter: Y
+    audioClip: {fileID: 8300000, guid: 11b909c53a9b72a4ea171b51d0582cfc, type: 3}
+  - letter: Z
+    audioClip: {fileID: 8300000, guid: f46bdf539bec19043b28aeda025f7435, type: 3}
+  - letter: N
+    audioClip: {fileID: 8300000, guid: f7c72d099e9035d418b567aa1f36f4f9, type: 3}
+  - letter: Q
+    audioClip: {fileID: 8300000, guid: c7784f6c726f53740af06520073caf8c, type: 3}
+  winClip: {fileID: 8300000, guid: debc22583c6cd7d43b34351e8d86bc51, type: 3}
+  looseClip: {fileID: 8300000, guid: cca60d7cf134ac941889539c28b97144, type: 3}

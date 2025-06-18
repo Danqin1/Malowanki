@@ -14,4 +14,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Adding.unity
     guid: 5d59a2ef8f5630449b20dd9d57c715a2
+  - enabled: 1
+    path: Assets/Scenes/Shapes.unity
+    guid: 374bc18683a45b54aa485b89c523df5f
+  - enabled: 1
+    path: Assets/Scenes/PaintingModels.unity
+    guid: 999f9be6339e8504b8fbfd95e5b7ead0
+  - enabled: 1
+    path: Assets/Scenes/DrawingWithInstantiate.unity
+    guid: 26230cf4ab9fd6645ae7d84582381aea
+  - enabled: 1
+    path: Assets/Scenes/Letters.unity
+    guid: 9b588bd7a8df2aa4182f6b053bb3dcc2
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

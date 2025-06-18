@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -7,6 +8,15 @@ public class MainMenu : MonoBehaviour
     public GameObject PlayModesCanvas;
     public GameObject ModelsCanvas;
     public GameObject AddingLevels;
+
+    private void Start()
+    {
+        MainMenuCanvas.SetActive(true);
+        PlayModesCanvas.SetActive(false);
+        ModelsCanvas.SetActive(false);
+        AddingLevels.SetActive(false);
+    }
+
     public void PlayButton()
     {
         MainMenuCanvas.SetActive(false);
@@ -45,6 +55,18 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Bear");
     }
+    
+    public void PlayLetters()
+    {
+        SceneManager.LoadScene("Letters");
+    }
+
+    public void PlaySyllabs()
+    {
+        SceneManager.LoadScene("Syllabs");
+    }
+
+    
     public void BackToMainMenu()
     {
         MainMenuCanvas.SetActive(true);
@@ -56,6 +78,7 @@ public class MainMenu : MonoBehaviour
         PlayModesCanvas.SetActive(true);
         AddingLevels.SetActive(false);
     }
+    
     public void Quit()
     {
         Application.Quit();
