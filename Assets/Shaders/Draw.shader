@@ -48,11 +48,18 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
+                /*// sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
                 float draw = pow(saturate(1 - distance(i.uv, _Mouse.xy)), 400); //jesli jest takie same bedzie - 1 jesli nie to 0
                 fixed4 drawCol = _DrawColor * (draw * _BrushSize*100);
-                return saturate(col+drawCol); // dodaje do siebie kolory
+                return saturate(col+drawCol); // dodaje do siebie kolory*/
+
+                fixed4 col = tex2D(_MainTex, i.uv);
+                float draw = pow(saturate(1 - distance(i.uv, _Mouse.xy)), 400) * _BrushSize * 100;
+                if (draw > 0.5)
+                    return _DrawColor;
+                else
+                    return col;
             }
             ENDCG
         }
